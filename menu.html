@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Daily Dough Bakery Menu</title>
+
+  <link rel="stylesheet" href="menu.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+  <div class="nav-logo">
+    Daily Dough Bakery
+  </div>
+
+  <!-- MOBILE BUTTON -->
+  <div class="menu-toggle" id="menuToggle">
+    ☰
+  </div>
+
+  <div class="nav-links" id="navLinks">
+
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="recipes.html">Recipes</a>
+    <a href="about.html">About</a>
+
+  </div>
+
+</nav>
+<!-- HEADER -->
+<header class="menu-header">
+  <h1>Menu</h1>
+  <p>Fresh baked daily</p>
+</header>
+
+<!-- SEARCH -->
+<div class="search-container">
+  <input type="text" id="searchBar" placeholder="Search items...">
+</div>
+
+<!-- MENU ITEMS -->
+<section class="menu-container">
+
+  <div class="grid">
+
+    <div class="item" data-name="Sourdough" data-price="6">
+      <img src="images/sourdough.jpg">
+      <h3>Sourdough</h3>
+      <p>$6</p>
+    </div>
+
+    <div class="item" data-name="Baguette" data-price="4">
+      <img src="images/baguette.jpg">
+      <h3>Baguette</h3>
+      <p>$4</p>
+    </div>
+
+    <div class="item" data-name="Croissant" data-price="3">
+      <img src="images/croissant.jpg">
+      <h3>Croissant</h3>
+      <p>$3</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal hidden">
+  <div class="modal-content">
+
+    <span id="closeModal">&times;</span>
+
+    <h2 id="modalTitle"></h2>
+
+    <p>Select toppings (+$1 each)</p>
+
+    <label><input type="checkbox" value="Butter"> Butter</label><br>
+    <label><input type="checkbox" value="Jam"> Jam</label><br>
+    <label><input type="checkbox" value="Honey"> Honey</label><br>
+
+    <br>
+
+    <button id="addToCart">Add to Cart</button>
+
+  </div>
+</div>
+
+<!-- OVERLAY -->
+<div id="cartOverlay" class="cart-overlay hidden"></div>
+
+<!-- CART -->
+<div id="cart" class="cart">
+
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <span id="closeCart">&times;</span>
+  </div>
+
+  <div id="cartItems"></div>
+
+  <p id="cartTotal">Total: $0</p>
+
+  <a href="checkout.html">
+    <button class="checkout-btn">Checkout</button>
+  </a>
+
+</div>
+
+<!-- OPEN CART BUTTON -->
+<button id="openCartBtn" class="open-cart-btn">
+  🛒 Cart <span id="cartCount">0</span>
+</button>
+
+<div id="toast" class="toast hidden"></div>
+
+<script src="menu.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

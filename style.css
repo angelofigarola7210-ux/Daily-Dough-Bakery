@@ -1,0 +1,388 @@
+/* style.css */
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: 'Playfair Display', serif;
+  background: #FCF4E1;
+  color: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 50px;
+
+  background: white;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+}
+
+.nav-logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #8b5e3c;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #8b5e3c;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 50px 20px;
+
+  animation: fadeIn 1.2s ease;
+}
+
+/* LOGO */
+.logo {
+  width: 260px;
+
+  display: block;
+
+  margin: 0 auto 20px auto;
+
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* TITLE */
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem;
+
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #8b5e3c;
+}
+
+/* SECTION */
+.section {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+/* PRODUCTS */
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* CARD */
+.card {
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 14px;
+
+  width: 220px;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+  transition: 0.3s ease;
+
+  animation: fadeUp 1s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* FEATURE SECTION */
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+  padding: 80px;
+
+  animation: fadeUp 1.2s ease;
+}
+
+.feature img {
+  width: 50%;
+  border-radius: 14px;
+
+  transition: transform 0.4s ease;
+}
+
+.feature img:hover {
+  transform: scale(1.03);
+}
+
+.feature div {
+  width: 50%;
+}
+
+.feature h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.feature p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* BUTTON SECTION */
+.nav-buttons {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.nav-buttons a {
+  text-decoration: none;
+
+  background: #8b5e3c;
+  color: white;
+
+  padding: 18px 35px;
+
+  margin: 15px;
+
+  border-radius: 12px;
+
+  display: inline-block;
+
+  font-size: 1.2rem;
+
+  transition: 0.3s ease;
+}
+
+.nav-buttons a:hover {
+  background: #6e472d;
+  transform: scale(1.08);
+}
+
+/* FOOTER */
+footer {
+  background: #8b5e3c;
+  color: white;
+
+  text-align: center;
+
+  padding: 35px 20px;
+}
+
+footer p {
+  margin: 8px 0;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  /* NAVBAR */
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  /* HEADER */
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .logo {
+    width: 180px;
+  }
+
+  /* FEATURE SECTION */
+  .feature {
+    flex-direction: column;
+    padding: 50px 25px;
+    text-align: center;
+  }
+
+  .feature img {
+    width: 100%;
+  }
+
+  .feature div {
+    width: 100%;
+  }
+
+  /* PRODUCTS */
+  .products {
+    gap: 25px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* BUTTONS */
+  .nav-buttons a {
+    display: block;
+    margin: 15px auto;
+    width: 80%;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .section h2,
+  .feature h2 {
+    font-size: 2rem;
+  }
+
+  .feature {
+    padding: 40px 20px;
+  }
+
+  .section {
+    padding: 60px 15px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #8b5e3c;
+}
+
+/* desktop default */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+
+    flex-direction: column;
+
+    background: white;
+
+    width: 200px;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}

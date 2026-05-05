@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Checkout - Daily Dough Bakery</title>
+
+  <link rel="stylesheet" href="checkout.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+  <div class="nav-logo">
+    Daily Dough Bakery
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="recipes.html">Recipes</a>
+    <a href="about.html">About</a>
+  </div>
+
+</nav>
+
+<!-- CHECKOUT -->
+<div class="checkout">
+
+  <!-- SUMMARY -->
+  <div class="summary">
+
+    <h2>Your Order</h2>
+
+    <div id="orderItems"></div>
+
+    <div class="total">
+      <h3 id="orderTotal">Total: $0</h3>
+    </div>
+
+  </div>
+
+  <!-- PAYMENT -->
+  <div class="payment">
+
+    <h2>Payment</h2>
+
+    <div class="card-ui">
+
+      <input type="text" id="name" placeholder="Cardholder Name">
+      <input type="text" id="cardNumber" placeholder="Card Number">
+
+      <div class="row">
+        <input type="text" id="expiry" placeholder="MM/YY">
+        <input type="text" id="cvc" placeholder="CVC">
+      </div>
+
+      <input type="email" id="email" placeholder="Email">
+      <input type="text" id="address" placeholder="Billing Address">
+
+    </div>
+
+    <button id="placeOrder">Pay Now</button>
+
+  </div>
+
+</div>
+
+<!-- PROCESSING -->
+<div id="processing" class="processing hidden">
+  <div class="processing-box">
+    <div class="spinner"></div>
+    <h2>Processing Payment...</h2>
+  </div>
+</div>
+
+<!-- CONFIRMATION -->
+<div id="confirmation" class="popup hidden">
+
+  <div class="popup-box">
+
+    <h1>Order Confirmed 🎉</h1>
+
+    <p>Your fresh bakery order is being prepared.</p>
+
+    <button onclick="goHome()">Back to Home</button>
+
+  </div>
+
+</div>
+
+<script src="checkout.js"></script>
+
+</body>
+</html>

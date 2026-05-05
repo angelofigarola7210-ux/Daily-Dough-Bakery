@@ -1,0 +1,194 @@
+
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background: #FCF4E1;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 40px;
+
+  background: white;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.nav-logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #8b5e3c;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* LAYOUT */
+.checkout {
+  display: flex;
+  gap: 30px;
+
+  padding: 50px;
+}
+
+.summary,
+.payment {
+  flex: 1;
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 14px;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.summary {
+  position: sticky;
+  top: 100px;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+
+  padding: 12px;
+
+  margin: 10px 0;
+
+  border-radius: 10px;
+
+  border: 1px solid #ccc;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.row input {
+  flex: 1;
+}
+
+/* BUTTON */
+#placeOrder {
+  width: 100%;
+
+  padding: 15px;
+
+  background: linear-gradient(135deg, #8b5e3c, #6e472d);
+  color: white;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-size: 1.1rem;
+
+  margin-top: 15px;
+
+  transition: 0.3s ease;
+}
+
+#placeOrder:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(139,94,60,0.3);
+}
+
+/* ORDER ITEMS */
+.order-item {
+  border-bottom: 1px solid #eee;
+
+  padding: 10px 0;
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.5);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.popup-box {
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 14px;
+
+  text-align: center;
+}
+
+/* LOADING SCREEN */
+.processing {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.processing-box {
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 16px;
+
+  text-align: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+
+  border: 4px solid #eee;
+  border-top: 4px solid #8b5e3c;
+
+  border-radius: 50%;
+
+  margin: 0 auto 15px;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.hidden {
+  display: none !important;
+}
