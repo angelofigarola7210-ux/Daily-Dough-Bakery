@@ -1,9 +1,8 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,135 +11,115 @@
   <link rel="stylesheet" href="style.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-  <nav class="navbar">
+<!-- NAVBAR -->
+<nav class="navbar">
 
   <div class="nav-logo">
     Daily Dough Bakery
   </div>
 
-  <!-- MOBILE BUTTON -->
-  <div class="menu-toggle" id="menuToggle">
-    ☰
-  </div>
-
-  <div class="nav-links" id="navLinks">
-
+  <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="menu.html">Menu</a>
     <a href="recipes.html">Recipes</a>
     <a href="about.html">About</a>
-
   </div>
 
 </nav>
 
-  <!-- HEADER -->
-  <header>
+<!-- HERO SECTION -->
+<section class="hero">
 
-    <!-- LOGO -->
-    <img
-      src="images/logo.jpg"
-      alt="Daily Dough Bakery Logo"
-      class="logo"
-    >
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+
+    <img src="images/logo.png" alt="Logo" class="hero-logo">
 
     <h1>Daily Dough Bakery</h1>
 
     <p>
-      Fresh bread and pastries baked daily
+      Fresh artisan sourdough baked daily with handcrafted ingredients.
     </p>
 
-  </header>
+    <div class="hero-buttons">
 
-  <!-- WEEKLY RECOMMENDATIONS -->
-  <section class="section">
+      <a href="menu.html" class="hero-btn">View Menu</a>
 
-    <h2>Weekly Recommendations</h2>
-
-    <div class="products">
-
-      <div class="card">
-
-        <img src="images/sourdough.jpg" alt="Sourdough">
-
-        <h3>Sourdough</h3>
-
-      </div>
-
-      <div class="card">
-
-        <img src="images/croissant.jpg" alt="Croissant">
-
-        <h3>Croissant</h3>
-
-      </div>
-
-      <div class="card">
-
-        <img src="images/baguette.jpg" alt="Baguette">
-
-        <h3>Baguette</h3>
-
-      </div>
+      <a href="#weekly" class="hero-btn secondary-btn">Weekly Favorites</a>
 
     </div>
 
-  </section>
+  </div>
 
-  <!-- FEATURED BREAD -->
-  <section class="feature">
+</section>
 
-    <img
-      src="images/featured-bread.jpg"
-      alt="Featured Bread"
-    >
+<!-- WEEKLY SECTION -->
+<section id="weekly" class="section">
 
-    <div>
+  <h2>Weekly Recommendations</h2>
 
-      <h2>Fresh Artisan Bread</h2>
+  <p>Our most loved fresh-baked loaves this week.</p>
 
-      <p>
-        Our artisan bread is handcrafted every morning
-        using slow fermentation techniques and premium
-        ingredients to create rich flavor and texture.
-      </p>
+  <div class="products">
 
-      <p>
-        Every loaf is baked fresh daily for the best
-        experience possible.
-      </p>
-
+    <div class="card">
+      <img src="images/country.jpg">
+      <h3>Country Sourdough</h3>
     </div>
 
-  </section>
+    <div class="card">
+      <img src="images/jalapeno.jpg">
+      <h3>Jalapeño Cheddar</h3>
+    </div>
 
-  <!-- BUTTONS -->
-  <section class="nav-buttons">
+    <div class="card">
+      <img src="images/cinnamon.jpg">
+      <h3>Cinnamon Swirl</h3>
+    </div>
 
-    <a href="menu.html">View Menu</a>
+  </div>
 
-    <a href="recipes.html">Recipes</a>
+</section>
 
-    <a href="about.html">About Us</a>
+<!-- FEATURED BREAD -->
+<section class="feature">
 
-  </section>
+  <img src="images/featured.jpg">
 
-  <!-- FOOTER -->
-  <footer>
+  <div>
 
-    <p>Contact Us</p>
+    <h2>Fresh Baked Every Morning</h2>
 
-    <p>Email: dailydough@email.com</p>
+    <p>
+      Our sourdough is naturally fermented for 24–48 hours, giving it a rich flavor and perfect texture.
+      We use only simple ingredients: flour, water, salt, and time.
+    </p>
 
-    <p>Phone: (555) 123-4567</p>
+  </div>
 
-  </footer>
-  <script src="main.js"></script>
+</section>
+
+<!-- NAV BUTTONS -->
+<section class="nav-buttons">
+
+  <a href="menu.html">Menu</a>
+  <a href="recipes.html">Recipes</a>
+  <a href="about.html">About</a>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+  <p>© 2026 Daily Dough Bakery</p>
+
+</footer>
 
 </body>
-
 </html>
