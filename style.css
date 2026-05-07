@@ -81,7 +81,7 @@ body {
 }
 
 .hero-logo {
-  width: 160px;
+  width: 500px;
   margin-bottom: 20px;
   animation: float 4s infinite ease-in-out;
 }
