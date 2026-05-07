@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="menu.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -25,10 +27,12 @@
   </div>
 
   <div class="nav-links" id="navLinks">
+
     <a href="index.html">Home</a>
     <a href="menu.html">Menu</a>
     <a href="recipes.html">Recipes</a>
     <a href="about.html">About</a>
+
   </div>
 
 </nav>
@@ -36,7 +40,7 @@
 <!-- HEADER -->
 <header class="menu-header">
 
-  <h1>Artisan Sourdough Menu</h1>
+  <h1>🥖 Artisan Sourdough Menu</h1>
 
   <p>
     Handcrafted in small batches. Naturally leavened. Made fresh to order.
@@ -45,7 +49,7 @@
 </header>
 
 <!-- INGREDIENTS -->
-<div class="ingredients-box">
+<section class="ingredients-box">
 
   <h2>Sourdough Ingredients</h2>
 
@@ -53,11 +57,17 @@
     Bread flour • Sourdough starter • Salt • Water • Various inclusions
   </p>
 
-</div>
+</section>
 
 <!-- SEARCH -->
 <div class="search-container">
-  <input type="text" id="searchBar" placeholder="Search breads...">
+
+  <input
+    type="text"
+    id="searchBar"
+    placeholder="Search artisan breads..."
+  >
+
 </div>
 
 <!-- CLASSICS -->
@@ -73,13 +83,15 @@
 
     <div class="item" data-name="Country Sourdough" data-price="8">
 
-      <div class="badge">Best Seller</div>
+      <div class="badge">Popular</div>
 
-      <img src="images/country.jpg">
+      <img src="images/country.jpg" alt="Country Sourdough">
 
       <h3>Country Sourdough</h3>
 
-      <p>Crisp crust with an airy crumb</p>
+      <p>
+        Our signature loaf with a crisp crust and airy crumb
+      </p>
 
       <span>$8</span>
 
@@ -87,11 +99,13 @@
 
     <div class="item" data-name="Whole Wheat" data-price="7">
 
-      <img src="images/wheat.jpg">
+      <img src="images/wheat.jpg" alt="Whole Wheat">
 
       <h3>Whole Wheat</h3>
 
-      <p>Hearty, nutty, wholesome</p>
+      <p>
+        Hearty, nutty, and wholesome
+      </p>
 
       <span>$7</span>
 
@@ -99,11 +113,27 @@
 
     <div class="item" data-name="Multigrain" data-price="8">
 
-      <img src="images/multigrain.jpg">
+      <img src="images/multigrain.jpg" alt="Multigrain">
 
       <h3>Multigrain</h3>
 
-      <p>Blend of grains and seeds</p>
+      <p>
+        A blend of grains and seeds for added texture
+      </p>
+
+      <span>$8</span>
+
+    </div>
+
+    <div class="item" data-name="Seeded Loaf" data-price="8">
+
+      <img src="images/seeded.jpg" alt="Seeded Loaf">
+
+      <h3>Seeded Loaf</h3>
+
+      <p>
+        Topped with sesame, sunflower, and flax
+      </p>
 
       <span>$8</span>
 
@@ -113,36 +143,174 @@
 
 </section>
 
-<!-- SAVORY -->
+<!-- SAVORY FAVORITES -->
 <section class="menu-category">
 
   <h2>Savory Favorites</h2>
 
   <p class="category-subtitle">
-    Bold flavors perfect for meals and entertaining
+    Bold flavors, perfect for meals and entertaining
   </p>
 
   <div class="grid">
 
     <div class="item" data-name="Roasted Garlic & Rosemary" data-price="9">
-      <img src="images/garlic.jpg">
+
+      <img src="images/garlic.jpg" alt="Garlic Rosemary">
+
       <h3>Roasted Garlic & Rosemary</h3>
-      <p>Warm savory herb flavor</p>
+
+      <p>
+        Rich roasted garlic with fresh rosemary
+      </p>
+
       <span>$9</span>
+
     </div>
 
     <div class="item" data-name="Jalapeño Cheddar" data-price="10">
-      <img src="images/jalapeno.jpg">
+
+      <div class="badge">Spicy</div>
+
+      <img src="images/jalapeno.jpg" alt="Jalapeno Cheddar">
+
       <h3>Jalapeño Cheddar 🌶️🧀</h3>
-      <p>Spicy with melted cheddar</p>
+
+      <p>
+        Sharp cheddar with spicy jalapeño flavor
+      </p>
+
       <span>$10</span>
+
+    </div>
+
+    <div class="item" data-name="Everything Seasoning" data-price="9">
+
+      <img src="images/everything.jpg" alt="Everything Seasoning">
+
+      <h3>Everything Seasoning</h3>
+
+      <p>
+        Loaded with garlic, sesame, onion, and poppy seeds
+      </p>
+
+      <span>$9</span>
+
     </div>
 
     <div class="item" data-name="Kalamata Olive" data-price="9">
-      <img src="images/olive.jpg">
+
+      <img src="images/olive.jpg" alt="Kalamata Olive">
+
       <h3>Kalamata Olive</h3>
-      <p>Rich olive flavor throughout</p>
+
+      <p>
+        Savory olive flavor baked into every slice
+      </p>
+
       <span>$9</span>
+
+    </div>
+
+    <div class="item" data-name="Sun-Dried Tomato & Basil" data-price="10">
+
+      <img src="images/tomato.jpg" alt="Tomato Basil">
+
+      <h3>Sun-Dried Tomato & Basil</h3>
+
+      <p>
+        Mediterranean-inspired artisan loaf
+      </p>
+
+      <span>$10</span>
+
+    </div>
+
+    <div class="item" data-name="Caramelized Onion" data-price="9">
+
+      <img src="images/onion.jpg" alt="Caramelized Onion">
+
+      <h3>Caramelized Onion</h3>
+
+      <p>
+        Sweet onion flavor with a savory finish
+      </p>
+
+      <span>$9</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CHEESE LOAVES -->
+<section class="menu-category">
+
+  <h2>Cheese Loaves</h2>
+
+  <p class="category-subtitle">
+    Rich, indulgent, and customer favorites
+  </p>
+
+  <div class="grid">
+
+    <div class="item" data-name="Sharp Cheddar" data-price="10">
+
+      <img src="images/cheddar.jpg" alt="Sharp Cheddar">
+
+      <h3>Sharp Cheddar 🧀</h3>
+
+      <p>
+        Packed with bold cheddar flavor
+      </p>
+
+      <span>$10</span>
+
+    </div>
+
+    <div class="item" data-name="Three Cheese Blend" data-price="11">
+
+      <div class="badge">Favorite</div>
+
+      <img src="images/threecheese.jpg" alt="Three Cheese">
+
+      <h3>Three Cheese Blend 🧀</h3>
+
+      <p>
+        A rich combination of artisan cheeses
+      </p>
+
+      <span>$11</span>
+
+    </div>
+
+    <div class="item" data-name="Parmesan Herb" data-price="10">
+
+      <img src="images/parmesan.jpg" alt="Parmesan Herb">
+
+      <h3>Parmesan Herb 🧀</h3>
+
+      <p>
+        Savory parmesan with fresh herbs
+      </p>
+
+      <span>$10</span>
+
+    </div>
+
+    <div class="item" data-name="Mozzarella & Herb" data-price="10">
+
+      <img src="images/mozzarella.jpg" alt="Mozzarella Herb">
+
+      <h3>Mozzarella & Herb 🧀</h3>
+
+      <p>
+        Soft mozzarella blended with herbs
+      </p>
+
+      <span>$10</span>
+
     </div>
 
   </div>
@@ -161,24 +329,176 @@
   <div class="grid">
 
     <div class="item" data-name="Cinnamon Sugar Swirl" data-price="9">
-      <img src="images/cinnamon.jpg">
+
+      <img src="images/cinnamon.jpg" alt="Cinnamon Swirl">
+
       <h3>Cinnamon Sugar Swirl</h3>
-      <p>Sweet cinnamon spiral loaf</p>
+
+      <p>
+        Sweet cinnamon layers throughout the loaf
+      </p>
+
       <span>$9</span>
+
     </div>
 
     <div class="item" data-name="Chocolate Chip" data-price="10">
-      <img src="images/chocolate.jpg">
+
+      <img src="images/chocolate.jpg" alt="Chocolate Chip">
+
       <h3>Chocolate Chip</h3>
-      <p>Soft interior with chocolate chips</p>
+
+      <p>
+        Soft sourdough with rich chocolate chips
+      </p>
+
       <span>$10</span>
+
+    </div>
+
+    <div class="item" data-name="Cranberry Walnut" data-price="10">
+
+      <img src="images/cranberry.jpg" alt="Cranberry Walnut">
+
+      <h3>Cranberry Walnut</h3>
+
+      <p>
+        Tart cranberries balanced with walnuts
+      </p>
+
+      <span>$10</span>
+
     </div>
 
     <div class="item" data-name="Blueberry Lemon" data-price="10">
-      <img src="images/blueberry.jpg">
+
+      <img src="images/blueberry.jpg" alt="Blueberry Lemon">
+
       <h3>Blueberry Lemon</h3>
-      <p>Bright citrus and berry flavor</p>
+
+      <p>
+        Bright citrus flavor with sweet blueberries
+      </p>
+
       <span>$10</span>
+
+    </div>
+
+    <div class="item" data-name="Apple Cinnamon" data-price="10">
+
+      <img src="images/apple.jpg" alt="Apple Cinnamon">
+
+      <h3>Apple Cinnamon</h3>
+
+      <p>
+        Warm apple flavor with cinnamon spice
+      </p>
+
+      <span>$10</span>
+
+    </div>
+
+    <div class="item" data-name="Funfetti" data-price="11">
+
+      <div class="badge">Limited</div>
+
+      <img src="images/funfetti.jpg" alt="Funfetti">
+
+      <h3>Funfetti</h3>
+
+      <p>
+        Colorful sweet loaf perfect for celebrations
+      </p>
+
+      <span>$11</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SIGNATURE -->
+<section class="menu-category">
+
+  <h2>Signature Flavors</h2>
+
+  <p class="category-subtitle">
+    Rotating, limited-release creations
+  </p>
+
+  <div class="grid">
+
+    <div class="item" data-name="Hot Honey" data-price="11">
+
+      <img src="images/hothoney.jpg" alt="Hot Honey">
+
+      <h3>Hot Honey</h3>
+
+      <p>
+        Sweet heat with artisan sourdough texture
+      </p>
+
+      <span>$11</span>
+
+    </div>
+
+    <div class="item" data-name="Green Chili Cheddar" data-price="11">
+
+      <div class="badge">Spicy</div>
+
+      <img src="images/greenchili.jpg" alt="Green Chili">
+
+      <h3>Green Chili Cheddar 🌶️🧀</h3>
+
+      <p>
+        Southwestern-inspired cheesy loaf
+      </p>
+
+      <span>$11</span>
+
+    </div>
+
+    <div class="item" data-name="Maple Bacon" data-price="12">
+
+      <img src="images/maplebacon.jpg" alt="Maple Bacon">
+
+      <h3>Maple Bacon</h3>
+
+      <p>
+        Sweet maple paired with savory bacon
+      </p>
+
+      <span>$12</span>
+
+    </div>
+
+    <div class="item" data-name="Chili Crisp & Chive" data-price="11">
+
+      <img src="images/chilicrisp.jpg" alt="Chili Crisp">
+
+      <h3>Chili Crisp & Chive 🌶️</h3>
+
+      <p>
+        Bold umami flavor with mild spice
+      </p>
+
+      <span>$11</span>
+
+    </div>
+
+    <div class="item" data-name="Pesto & Mozzarella" data-price="11">
+
+      <img src="images/pesto.jpg" alt="Pesto Mozzarella">
+
+      <h3>Pesto & Mozzarella</h3>
+
+      <p>
+        Fresh basil pesto with melted mozzarella
+      </p>
+
+      <span>$11</span>
+
     </div>
 
   </div>
@@ -211,7 +531,7 @@
 <!-- TOAST -->
 <div id="toast" class="toast hidden"></div>
 
-<!-- OVERLAY -->
+<!-- CART OVERLAY -->
 <div id="cartOverlay" class="cart-overlay hidden"></div>
 
 <!-- CART -->
@@ -227,23 +547,29 @@
 
   <div id="cartItems"></div>
 
-  <p id="cartTotal">Total: $0</p>
+  <p id="cartTotal">
+    Total: $0
+  </p>
 
   <a href="checkout.html">
+
     <button class="checkout-btn">
       Checkout
     </button>
+
   </a>
 
 </div>
 
 <!-- CART BUTTON -->
 <button id="openCartBtn" class="open-cart-btn">
-  🛒 Cart <span id="cartCount">0</span>
+
+  🛒 Cart
+  <span id="cartCount">0</span>
+
 </button>
 
 <script src="menu.js"></script>
 
 </body>
-</html>
 </html>
