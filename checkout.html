@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="checkout.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -32,7 +34,7 @@
 <!-- CHECKOUT -->
 <div class="checkout">
 
-  <!-- SUMMARY -->
+  <!-- ORDER SUMMARY -->
   <div class="summary">
 
     <h2>Your Order</h2>
@@ -48,35 +50,129 @@
   <!-- PAYMENT -->
   <div class="payment">
 
-    <h2>Payment</h2>
+    <h2>Secure Checkout</h2>
 
-    <div class="card-ui">
+    <p class="checkout-subtitle">
+      Complete your artisan bakery order
+    </p>
 
-      <input type="text" id="name" placeholder="Cardholder Name">
-      <input type="text" id="cardNumber" placeholder="Card Number">
+    <!-- CUSTOMER INFO -->
+    <div class="input-group">
 
-      <div class="row">
-        <input type="text" id="expiry" placeholder="MM/YY">
-        <input type="text" id="cvc" placeholder="CVC">
-      </div>
-
-      <input type="email" id="email" placeholder="Email">
-      <input type="text" id="address" placeholder="Billing Address">
+      <label>Full Name</label>
+      <input type="text" id="name" placeholder="John Doe">
 
     </div>
 
-    <button id="placeOrder">Pay Now</button>
+    <div class="input-group">
+
+      <label>Email Address</label>
+      <input type="email" id="email" placeholder="example@email.com">
+
+    </div>
+
+    <!-- DELIVERY -->
+    <h3>Order Type</h3>
+
+    <div class="delivery-options">
+
+      <label class="delivery-card">
+
+        <input
+          type="radio"
+          name="deliveryType"
+          value="pickup"
+          checked
+        >
+
+        <span>🏪 Pickup</span>
+
+      </label>
+
+      <label class="delivery-card">
+
+        <input
+          type="radio"
+          name="deliveryType"
+          value="delivery"
+        >
+
+        <span>🚚 Delivery (+$5)</span>
+
+      </label>
+
+    </div>
+
+    <!-- DELIVERY INFO -->
+    <div id="deliveryInfo" class="hidden">
+
+      <div class="input-group">
+
+        <label>Delivery Address</label>
+
+        <input
+          type="text"
+          id="address"
+          placeholder="123 Main Street"
+        >
+
+      </div>
+
+    </div>
+
+    <!-- PAYMENT -->
+    <h3>Card Information</h3>
+
+    <div class="card-box">
+
+      <div class="input-group">
+
+        <label>Card Number</label>
+
+        <input
+          type="text"
+          placeholder="1234 5678 9012 3456"
+        >
+
+      </div>
+
+      <div class="card-row">
+
+        <div class="input-group">
+
+          <label>Expiration</label>
+
+          <input
+            type="text"
+            placeholder="MM/YY"
+          >
+
+        </div>
+
+        <div class="input-group">
+
+          <label>CVC</label>
+
+          <input
+            type="text"
+            placeholder="123"
+          >
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- BUTTON -->
+    <button id="placeOrder">
+
+      🔒 Pay & Place Order
+
+    </button>
 
   </div>
 
-</div>
-
-<!-- PROCESSING -->
-<div id="processing" class="processing hidden">
-  <div class="processing-box">
-    <div class="spinner"></div>
-    <h2>Processing Payment...</h2>
-  </div>
 </div>
 
 <!-- CONFIRMATION -->
@@ -84,17 +180,26 @@
 
   <div class="popup-box">
 
-    <h1>Order Confirmed 🎉</h1>
+    <div class="success-icon">
+      ✓
+    </div>
 
-    <p>Your fresh bakery order is being prepared.</p>
+    <h1>Order Confirmed</h1>
 
-    <button onclick="goHome()">Back to Home</button>
+    <p>
+      Your fresh artisan bread is now being prepared.
+    </p>
+
+    <button onclick="goHome()">
+      Back to Home
+    </button>
 
   </div>
 
 </div>
 
 <script src="checkout.js"></script>
+<script src="main.js"></script>
 
 </body>
 </html>
