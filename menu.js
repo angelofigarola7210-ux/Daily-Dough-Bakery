@@ -1,115 +1,316 @@
-function updateCart() {
+document.addEventListener("DOMContentLoaded", () => {
 
-  cartItemsDiv.innerHTML = "";
+  const items =
+    document.querySelectorAll(".item");
 
-  let grandQuantity = 0;
-  let toppingsTotal = 0;
+  const modal =
+    document.getElementById("modal");
 
-  // CREATE CART ITEMS
-  cartData.forEach((item, index) => {
+  const closeModal =
+    document.getElementById("closeModal");
 
-    grandQuantity += item.quantity;
+  const modalTitle =
+    document.getElementById("modalTitle");
 
-    toppingsTotal +=
-      item.toppingCost * item.quantity;
+  const addToCartBtn =
+    document.getElementById("addToCart");
 
-    const div = document.createElement("div");
+  const cart =
+    document.getElementById("cart");
 
-    div.classList.add("cart-item");
+  const cartOverlay =
+    document.getElementById("cartOverlay");
 
-    div.innerHTML = `
-      <p><strong>${item.name}</strong></p>
+  const openCartBtn =
+    document.getElementById("openCartBtn");
 
-      <p>
-        Toppings:
-        ${item.toppings.join(", ") || "None"}
-      </p>
+  const closeCart =
+    document.getElementById("closeCart");
 
-      <div class="quantity-controls">
+  const cartItemsDiv =
+    document.getElementById("cartItems");
 
-        <button class="minus-btn"
-          data-index="${index}">
-          -
-        </button>
+  const cartTotal =
+    document.getElementById("cartTotal");
 
-        <span>${item.quantity}</span>
+  const searchBar =
+    document.getElementById("searchBar");
 
-        <button class="plus-btn"
-          data-index="${index}">
-          +
-        </button>
+  let selectedItem = null;
 
-      </div>
-    `;
-
-    cartItemsDiv.appendChild(div);
-
-  });
+  let cartData =
+    JSON.parse(localStorage.getItem("cart")) || [];
 
   // =====================
-  // BUNDLE DEAL LOGIC
+  // OPEN ITEM MODAL
   // =====================
 
-  const pairs =
-    Math.floor(grandQuantity / 2);
+  items.forEach(item => {
 
-  const leftover =
-    grandQuantity % 2;
+    item.addEventListener("click", () => {
 
-  const breadTotal =
-    (pairs * 27) +
-    (leftover * 15);
+      selectedItem = {
 
-  const finalTotal =
-    breadTotal + toppingsTotal;
+        name: item.dataset.name,
 
-  cartTotal.textContent =
-    "Total: $" + finalTotal;
+        price: Number(item.dataset.price)
 
-  // =====================
-  // PLUS BUTTONS
-  // =====================
+      };
 
-  document.querySelectorAll(".plus-btn")
-    .forEach(button => {
+      modalTitle.textContent =
+        selectedItem.name;
 
-    button.addEventListener("click", () => {
-
-      const index =
-        button.dataset.index;
-
-      cartData[index].quantity++;
-
-      saveCart();
-      updateCart();
+      modal.classList.add("show");
 
     });
 
   });
 
   // =====================
-  // MINUS BUTTONS
+  // CLOSE MODAL
   // =====================
 
-  document.querySelectorAll(".minus-btn")
-    .forEach(button => {
+  closeModal.addEventListener("click", () => {
 
-    button.addEventListener("click", () => {
+    modal.classList.remove("show");
 
-      const index =
-        button.dataset.index;
+  });
 
-      cartData[index].quantity--;
+  // =====================
+  // ADD TO CART
+  // =====================
 
-      if (cartData[index].quantity <= 0) {
-        cartData.splice(index, 1);
-      }
+  addToCartBtn.addEventListener("click", () => {
 
-      saveCart();
-      updateCart();
+    if (!selectedItem) return;
+
+    const toppings = [];
+
+    document
+      .querySelectorAll(".modal-content input:checked")
+      .forEach(box => {
+
+        toppings.push(box.value);
+
+      });
+
+    cartData.push({
+
+      name: selectedItem.name,
+
+      basePrice: selectedItem.price,
+
+      toppings: toppings,
+
+      toppingCost: toppings.length,
+
+      quantity: 1
+
+    });
+
+    saveCart();
+
+    updateCart();
+
+    modal.classList.remove("show");
+
+    document
+      .querySelectorAll(".modal-content input")
+      .forEach(box => {
+
+        box.checked = false;
+
+      });
+
+  });
+
+  // =====================
+  // OPEN CART
+  // =====================
+
+  openCartBtn.addEventListener("click", () => {
+
+    cart.classList.add("open");
+
+    cartOverlay.classList.add("show");
+
+  });
+
+  // =====================
+  // CLOSE CART
+  // =====================
+
+  function closeCartFunc() {
+
+    cart.classList.remove("open");
+
+    cartOverlay.classList.remove("show");
+
+  }
+
+  closeCart.addEventListener(
+    "click",
+    closeCartFunc
+  );
+
+  cartOverlay.addEventListener(
+    "click",
+    closeCartFunc
+  );
+
+  // =====================
+  // UPDATE CART
+  // =====================
+
+  function updateCart() {
+
+    cartItemsDiv.innerHTML = "";
+
+    let grandQuantity = 0;
+
+    let toppingsTotal = 0;
+
+    cartData.forEach((item, index) => {
+
+      grandQuantity += item.quantity;
+
+      toppingsTotal +=
+        item.toppingCost * item.quantity;
+
+      const div =
+        document.createElement("div");
+
+      div.classList.add("cart-item");
+
+      div.innerHTML = `
+
+        <p>
+          <strong>${item.name}</strong>
+        </p>
+
+        <p>
+          Toppings:
+          ${item.toppings.join(", ") || "None"}
+        </p>
+
+        <div class="quantity-controls">
+
+          <button class="minus-btn"
+            data-index="${index}">
+            -
+          </button>
+
+          <span>${item.quantity}</span>
+
+          <button class="plus-btn"
+            data-index="${index}">
+            +
+          </button>
+
+        </div>
+
+      `;
+
+      cartItemsDiv.appendChild(div);
+
+    });
+
+    // BUNDLE DEAL
+    const pairs =
+      Math.floor(grandQuantity / 2);
+
+    const leftover =
+      grandQuantity % 2;
+
+    const breadTotal =
+      (pairs * 27) +
+      (leftover * 15);
+
+    const finalTotal =
+      breadTotal + toppingsTotal;
+
+    cartTotal.textContent =
+      "Total: $" + finalTotal;
+
+    // PLUS BUTTONS
+    document
+      .querySelectorAll(".plus-btn")
+      .forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const index =
+          button.dataset.index;
+
+        cartData[index].quantity++;
+
+        saveCart();
+
+        updateCart();
+
+      });
+
+    });
+
+    // MINUS BUTTONS
+    document
+      .querySelectorAll(".minus-btn")
+      .forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const index =
+          button.dataset.index;
+
+        cartData[index].quantity--;
+
+        if (
+          cartData[index].quantity <= 0
+        ) {
+
+          cartData.splice(index, 1);
+
+        }
+
+        saveCart();
+
+        updateCart();
+
+      });
+
+    });
+
+  }
+
+  // SAVE CART
+  function saveCart() {
+
+    localStorage.setItem(
+      "cart",
+      JSON.stringify(cartData)
+    );
+
+  }
+
+  // SEARCH
+  searchBar.addEventListener("input", () => {
+
+    const value =
+      searchBar.value.toLowerCase();
+
+    items.forEach(item => {
+
+      item.style.display =
+        item.innerText
+          .toLowerCase()
+          .includes(value)
+          ? "block"
+          : "none";
 
     });
 
   });
 
-}
+  updateCart();
+
+});
