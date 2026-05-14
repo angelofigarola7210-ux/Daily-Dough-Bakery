@@ -4,13 +4,18 @@
 <head>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Daily Dough Bakery Menu</title>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Daily Dough Bakery Menu
+  </title>
 
   <link rel="stylesheet" href="menu.css">
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap"
+    rel="stylesheet">
 
 </head>
 
@@ -24,10 +29,23 @@
   </div>
 
   <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="recipes.html">Recipes</a>
-    <a href="about.html">About</a>
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="menu.html">
+      Menu
+    </a>
+
+    <a href="recipes.html">
+      Recipes
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
   </div>
 
 </nav>
@@ -35,21 +53,38 @@
 <!-- HEADER -->
 <header class="menu-header">
 
-  <h1>🥖 Artisan Sourdough Menu</h1>
+  <h1>
+    Artisan Sourdough Menu
+  </h1>
 
   <p>
-    Handcrafted in small batches. Naturally leavened. Made fresh to order.
+    Handcrafted in small batches.
+    Naturally leavened.
+    Made fresh to order.
   </p>
 
 </header>
 
-<!-- BUNDLE DEAL -->
+<!-- DEAL BANNER -->
 <div class="bundle-banner">
 
   🥖 Bundle Deal:
-  Buy 2 Artisan Loaves for $27
+  Any 2 bakery items for $27
 
 </div>
+
+<!-- INGREDIENTS -->
+<section class="ingredients-box">
+
+  <h2>
+    Sourdough Ingredients
+  </h2>
+
+  <p>
+    Bread flour • Sourdough starter • Salt • Water • Various inclusions
+  </p>
+
+</section>
 
 <!-- SEARCH -->
 <div class="search-container">
@@ -57,47 +92,60 @@
   <input
     type="text"
     id="searchBar"
-    placeholder="Search artisan breads..."
-  >
+    placeholder="Search bakery items...">
 
 </div>
 
-<!-- MENU SECTION -->
+<!-- CLASSICS -->
 <section class="menu-category">
 
   <h2>Classics</h2>
 
+  <p class="category-subtitle">
+    Simple, timeless, and perfect for everyday use
+  </p>
+
   <div class="grid">
 
-    <div class="item" data-name="Country Sourdough" data-price="15">
+    <div class="item"
+      data-name="Country Sourdough"
+      data-price="15">
+
+      <span class="badge">
+        Popular
+      </span>
 
       <img src="images/country.jpg">
 
       <h3>Country Sourdough</h3>
 
       <p>
-        Crisp crust with airy artisan crumb
+        Crisp crust and airy crumb
       </p>
 
       <span>$15</span>
 
     </div>
 
-    <div class="item" data-name="Whole Wheat" data-price="15">
+    <div class="item"
+      data-name="Whole Wheat"
+      data-price="15">
 
-      <img src="images/wheat.jpg">
+      <img src="images/wholewheat.jpg">
 
       <h3>Whole Wheat</h3>
 
       <p>
-        Hearty, nutty, and wholesome
+        Hearty and wholesome
       </p>
 
       <span>$15</span>
 
     </div>
 
-    <div class="item" data-name="Multigrain" data-price="15">
+    <div class="item"
+      data-name="Multigrain"
+      data-price="15">
 
       <img src="images/multigrain.jpg">
 
@@ -111,14 +159,16 @@
 
     </div>
 
-    <div class="item" data-name="Seeded Loaf" data-price="15">
+    <div class="item"
+      data-name="Seeded Loaf"
+      data-price="15">
 
       <img src="images/seeded.jpg">
 
       <h3>Seeded Loaf</h3>
 
       <p>
-        Sesame, sunflower, and flax topping
+        Sesame, sunflower, and flax
       </p>
 
       <span>$15</span>
@@ -134,44 +184,74 @@
 
   <h2>Savory Favorites</h2>
 
+  <p class="category-subtitle">
+    Bold flavors perfect for meals
+  </p>
+
   <div class="grid">
 
-    <div class="item" data-name="Roasted Garlic & Rosemary" data-price="15">
+    <div class="item"
+      data-name="Roasted Garlic & Rosemary"
+      data-price="15">
 
       <img src="images/garlic.jpg">
 
       <h3>Roasted Garlic & Rosemary</h3>
 
       <p>
-        Rich garlic flavor with rosemary herbs
+        Deep savory flavor
       </p>
 
       <span>$15</span>
 
     </div>
 
-    <div class="item" data-name="Jalapeño Cheddar" data-price="15">
+    <div class="item"
+      data-name="Jalapeño Cheddar"
+      data-price="15">
+
+      <span class="badge">
+        Spicy
+      </span>
 
       <img src="images/jalapeno.jpg">
 
-      <h3>Jalapeño Cheddar 🌶️🧀</h3>
+      <h3>Jalapeño Cheddar</h3>
 
       <p>
-        Sharp cheddar with spicy jalapeño
+        Sharp cheddar and jalapeño
       </p>
 
       <span>$15</span>
 
     </div>
 
-    <div class="item" data-name="Everything Seasoning" data-price="15">
+    <div class="item"
+      data-name="Everything Seasoning"
+      data-price="15">
 
       <img src="images/everything.jpg">
 
       <h3>Everything Seasoning</h3>
 
       <p>
-        Garlic, sesame, onion, and poppy seeds
+        Savory seasoning blend
+      </p>
+
+      <span>$15</span>
+
+    </div>
+
+    <div class="item"
+      data-name="Caramelized Onion"
+      data-price="15">
+
+      <img src="images/onion.jpg">
+
+      <h3>Caramelized Onion</h3>
+
+      <p>
+        Sweet roasted onions
       </p>
 
       <span>$15</span>
@@ -187,44 +267,74 @@
 
   <h2>Sweet & Specialty</h2>
 
+  <p class="category-subtitle">
+    Perfect for breakfast or dessert
+  </p>
+
   <div class="grid">
 
-    <div class="item" data-name="Cinnamon Sugar Swirl" data-price="15">
+    <div class="item"
+      data-name="Chocolate Chip"
+      data-price="15">
 
-      <img src="images/cinnamon.jpg">
+      <span class="badge">
+        Best Seller
+      </span>
 
-      <h3>Cinnamon Sugar Swirl</h3>
-
-      <p>
-        Sweet cinnamon baked throughout
-      </p>
-
-      <span>$15</span>
-
-    </div>
-
-    <div class="item" data-name="Chocolate Chip" data-price="15">
-
-      <img src="images/chocolate.jpg">
+      <img src="images/chocolate-chip.jpg">
 
       <h3>Chocolate Chip</h3>
 
       <p>
-        Artisan sourdough with chocolate chips
+        Sweet chocolate-filled loaf
       </p>
 
       <span>$15</span>
 
     </div>
 
-    <div class="item" data-name="Blueberry Lemon" data-price="15">
+    <div class="item"
+      data-name="Blueberry Lemon"
+      data-price="15">
 
       <img src="images/blueberry.jpg">
 
       <h3>Blueberry Lemon</h3>
 
       <p>
-        Bright citrus and blueberry flavor
+        Bright citrus flavor
+      </p>
+
+      <span>$15</span>
+
+    </div>
+
+    <div class="item"
+      data-name="Apple Cinnamon"
+      data-price="15">
+
+      <img src="images/apple.jpg">
+
+      <h3>Apple Cinnamon</h3>
+
+      <p>
+        Warm cinnamon apples
+      </p>
+
+      <span>$15</span>
+
+    </div>
+
+    <div class="item"
+      data-name="Funfetti"
+      data-price="15">
+
+      <img src="images/funfetti.jpg">
+
+      <h3>Funfetti</h3>
+
+      <p>
+        Colorful and sweet
       </p>
 
       <span>$15</span>
@@ -235,16 +345,154 @@
 
 </section>
 
+<!-- BREAKFAST -->
+<section class="menu-category">
+
+  <h2>Breakfast Collection</h2>
+
+  <p class="category-subtitle">
+    Morning bakery favorites
+  </p>
+
+  <div class="grid">
+
+    <div class="item"
+      data-name="Butter Croissant"
+      data-price="15">
+
+      <img src="images/croissant.jpg">
+
+      <h3>Butter Croissant</h3>
+
+      <p>
+        Flaky and buttery
+      </p>
+
+      <span>$15</span>
+
+    </div>
+
+    <div class="item"
+      data-name="Chocolate Croissant"
+      data-price="15">
+
+      <img src="images/choco-croissant.jpg">
+
+      <h3>Chocolate Croissant</h3>
+
+      <p>
+        Filled with chocolate
+      </p>
+
+      <span>$15</span>
+
+    </div>
+
+    <div class="item"
+      data-name="Morning Danish"
+      data-price="15">
+
+      <img src="images/danish.jpg">
+
+      <h3>Morning Danish</h3>
+
+      <p>
+        Sweet cream cheese filling
+      </p>
+
+      <span>$15</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- DESSERT -->
+<section class="menu-category">
+
+  <h2>Dessert Collection</h2>
+
+  <p class="category-subtitle">
+    Sweet bakery classics
+  </p>
+
+  <div class="grid">
+
+    <div class="item"
+      data-name="Chocolate Chunk Cookies"
+      data-price="15">
+
+      <img src="images/cookies.jpg">
+
+      <h3>Chocolate Chunk Cookies</h3>
+
+      <p>
+        Crispy edges and soft center
+      </p>
+
+      <span>$15</span>
+
+    </div>
+
+    <div class="item"
+      data-name="Cinnamon Rolls"
+      data-price="15">
+
+      <img src="images/cinnamon-roll.jpg">
+
+      <h3>Cinnamon Rolls</h3>
+
+      <p>
+        Warm cinnamon icing rolls
+      </p>
+
+      <span>$15</span>
+
+    </div>
+
+    <div class="item"
+      data-name="Brownie Squares"
+      data-price="15">
+
+      <img src="images/brownie.jpg">
+
+      <h3>Brownie Squares</h3>
+
+      <p>
+        Rich chocolate brownies
+      </p>
+
+      <span>$15</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- DRINKS -->
+<section class="menu-category">
+
+  
+  </div>
+
+</section>
+
 <!-- MODAL -->
-<div id="modal" class="modal hidden">
+<div id="modal" class="modal">
 
   <div class="modal-content">
 
-    <span id="closeModal">&times;</span>
+    <span id="closeModal">
+      ×
+    </span>
 
     <h2 id="modalTitle"></h2>
 
-    <p>Select toppings (+$1 each)</p>
+    <p>
+      Select toppings (+$1 each)
+    </p>
 
     <label>
       <input type="checkbox" value="Butter">
@@ -265,8 +513,6 @@
       Honey
     </label>
 
-    <br><br>
-
     <button id="addToCart">
       Add To Cart
     </button>
@@ -276,18 +522,21 @@
 </div>
 
 <!-- CART OVERLAY -->
-<div id="cartOverlay" class="cart-overlay hidden"></div>
+<div id="cartOverlay"
+  class="cart-overlay">
+</div>
 
 <!-- CART -->
-<div id="cart" class="cart">
+<div id="cart"
+  class="cart">
 
-  <div class="cart-header">
+  <h2>
+    Your Cart
+  </h2>
 
-    <h2>Your Cart</h2>
-
-    <span id="closeCart">&times;</span>
-
-  </div>
+  <span id="closeCart">
+    ×
+  </span>
 
   <div id="cartItems"></div>
 
@@ -306,7 +555,8 @@
 </div>
 
 <!-- OPEN CART -->
-<button id="openCartBtn" class="open-cart-btn">
+<button id="openCartBtn"
+  class="open-cart-btn">
 
   🛒 Cart
 
