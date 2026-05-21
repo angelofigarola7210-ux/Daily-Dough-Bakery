@@ -1,63 +1,118 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
+/* =========================
+   BODY
+========================= */
 body {
+
   font-family: 'Playfair Display', serif;
+
   background: #FCF4E1;
+
   color: #333;
+
+  overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   padding: 20px 40px;
 
-  background: white;
+  background: rgba(255,255,255,0.95);
+
+  backdrop-filter: blur(10px);
 
   position: sticky;
   top: 0;
 
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  box-shadow:
+    0 2px 12px rgba(0,0,0,0.08);
 
   z-index: 1000;
 }
 
 .nav-logo {
+
   font-family: 'Dancing Script', cursive;
+
   font-size: 2rem;
+
   color: #8b5e3c;
 }
 
 .nav-links {
+
   display: flex;
-  gap: 20px;
+
+  gap: 25px;
 }
 
 .nav-links a {
+
   text-decoration: none;
+
   color: #333;
-  transition: 0.3s;
+
+  position: relative;
+
+  transition: 0.3s ease;
 }
 
 .nav-links a:hover {
   color: #8b5e3c;
 }
 
-/* ================= HERO ================= */
+/* UNDERLINE EFFECT */
+.nav-links a::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -5px;
+
+  width: 0%;
+
+  height: 2px;
+
+  background: #8b5e3c;
+
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   HERO
+========================= */
 .hero {
+
   position: relative;
+
   height: 100vh;
 
-  background-image: url("images/bakery-hero.jpg");
+  background-image:
+    url("images/bakery-hero.jpg");
+
   background-size: cover;
+
   background-position: center;
 
   display: flex;
@@ -66,194 +121,464 @@ body {
 }
 
 .hero-overlay {
+
   position: absolute;
+
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.45)
+    );
 }
 
 .hero-content {
+
   position: relative;
+
   text-align: center;
+
   color: white;
+
+  max-width: 850px;
+
+  padding: 20px;
 
   animation: fadeUp 1s ease;
 }
 
+/* HERO LOGO */
 .hero-logo {
-  width: 500px;
-  margin-bottom: 20px;
-  animation: float 4s infinite ease-in-out;
+
+  width: 420px;
+
+  max-width: 90%;
+
+  margin-bottom: 25px;
+
+  animation:
+    float 4s ease-in-out infinite;
 }
 
 .hero h1 {
+
   font-family: 'Dancing Script', cursive;
-  font-size: 4rem;
-  margin-bottom: 10px;
+
+  font-size: 5rem;
+
+  margin-bottom: 15px;
 }
 
 .hero p {
+
   font-size: 1.2rem;
-  max-width: 600px;
+
+  line-height: 1.7;
+
+  max-width: 650px;
+
   margin: auto;
-  margin-bottom: 30px;
+
+  margin-bottom: 35px;
 }
 
-/* BUTTONS */
+/* =========================
+   HERO BUTTONS
+========================= */
 .hero-buttons {
+
   display: flex;
+
   justify-content: center;
-  gap: 15px;
+
+  gap: 18px;
+
   flex-wrap: wrap;
 }
 
 .hero-btn {
+
   background: #8b5e3c;
+
   color: white;
 
-  padding: 14px 28px;
+  padding: 15px 32px;
 
-  border-radius: 10px;
+  border-radius: 12px;
 
   text-decoration: none;
 
-  transition: 0.3s;
+  font-weight: bold;
+
+  transition: 0.3s ease;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.2);
 }
 
 .hero-btn:hover {
-  transform: translateY(-3px);
+
+  transform: translateY(-4px);
+
   background: #6e472d;
 }
 
 .secondary-btn {
+
   background: transparent;
+
   border: 2px solid white;
 }
 
 .secondary-btn:hover {
+
   background: white;
+
   color: black;
 }
 
-/* ================= SECTIONS ================= */
+/* =========================
+   GENERAL SECTIONS
+========================= */
 .section {
+
+  padding: 90px 20px;
+
   text-align: center;
-  padding: 80px 20px;
 }
 
-/* PRODUCTS */
+.section h2 {
+
+  font-size: 3rem;
+
+  color: #8b5e3c;
+
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+
+  color: #666;
+
+  max-width: 700px;
+
+  margin: auto;
+
+  margin-bottom: 50px;
+
+  line-height: 1.7;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
 .products {
+
   display: flex;
+
   justify-content: center;
+
   gap: 30px;
+
   flex-wrap: wrap;
 }
 
 .card {
+
   background: white;
-  padding: 15px;
 
-  border-radius: 12px;
+  padding: 18px;
 
-  width: 180px;
+  border-radius: 16px;
 
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 220px;
 
-  transition: 0.3s;
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.08);
+
+  transition: 0.3s ease;
 }
 
 .card:hover {
+
   transform: translateY(-8px);
+
+  box-shadow:
+    0 12px 25px rgba(0,0,0,0.15);
 }
 
-/* FEATURE */
-.feature {
-  display: flex;
-  gap: 40px;
-  align-items: center;
+.card img {
 
-  padding: 80px;
-}
+  width: 100%;
 
-.feature img {
-  width: 50%;
+  height: 180px;
+
+  object-fit: cover;
+
   border-radius: 12px;
 }
 
-.feature div {
-  width: 50%;
-  font-size: 1.1rem;
+.card h3 {
+
+  margin-top: 15px;
+
+  color: #8b5e3c;
 }
 
-/* BUTTONS SECTION */
-.nav-buttons {
+.card p {
+
+  margin-top: 10px;
+
+  color: #666;
+}
+
+/* =========================
+   FEATURED SECTION
+========================= */
+.featured-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 30px;
+
+  margin-top: 40px;
+}
+
+/* FEATURED CARD */
+.featured-card {
+
+  background: white;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.08);
+
+  transition: 0.3s ease;
+}
+
+.featured-card:hover {
+
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* IMAGE FIX */
+.featured-card img {
+
+  width: 100%;
+
+  height: 250px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* FEATURED TEXT */
+.featured-content {
+
+  padding: 22px;
+
   text-align: center;
-  padding: 80px;
+}
+
+.featured-content h3 {
+
+  margin-bottom: 12px;
+
+  color: #8b5e3c;
+
+  font-size: 1.5rem;
+}
+
+.featured-content p {
+
+  color: #666;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   CTA BUTTONS
+========================= */
+.nav-buttons {
+
+  text-align: center;
+
+  padding: 90px 20px;
 }
 
 .nav-buttons a {
+
   background: #8b5e3c;
+
   color: white;
 
-  padding: 15px 30px;
+  padding: 16px 32px;
 
-  margin: 10px;
+  margin: 12px;
 
   display: inline-block;
 
   text-decoration: none;
 
-  border-radius: 10px;
+  border-radius: 12px;
 
-  transition: 0.3s;
+  transition: 0.3s ease;
+
+  font-weight: bold;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.15);
 }
 
 .nav-buttons a:hover {
-  transform: scale(1.1);
+
+  transform: scale(1.08);
+
+  background: #6e472d;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer {
-  text-align: center;
-  padding: 30px;
 
   background: #8b5e3c;
+
   color: white;
+
+  text-align: center;
+
+  padding: 50px 20px;
 }
 
-/* ANIMATIONS */
+footer h3 {
+
+  font-family: 'Dancing Script', cursive;
+
+  font-size: 2rem;
+
+  margin-bottom: 15px;
+}
+
+footer p {
+
+  margin: 10px 0;
+
+  opacity: 0.9;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
 @keyframes fadeUp {
+
   from {
+
     opacity: 0;
+
     transform: translateY(30px);
   }
+
   to {
+
     opacity: 1;
+
     transform: translateY(0);
   }
+
 }
 
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
 
-/* MOBILE */
-@media (max-width: 768px) {
-
-  .feature {
-    flex-direction: column;
-    padding: 40px;
+  0% {
+    transform: translateY(0);
   }
 
-  .feature img,
-  .feature div {
-    width: 100%;
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  .navbar {
+
+    padding: 18px 20px;
+  }
+
+  .nav-links {
+
+    gap: 15px;
+
+    font-size: 0.9rem;
+  }
+
+  .hero {
+
+    height: 90vh;
   }
 
   .hero h1 {
-    font-size: 2.8rem;
+
+    font-size: 3rem;
+  }
+
+  .hero p {
+
+    font-size: 1rem;
+  }
+
+  .hero-logo {
+
+    width: 260px;
+  }
+
+  .section h2 {
+
+    font-size: 2.2rem;
+  }
+
+  .featured-grid {
+
+    grid-template-columns: 1fr;
+  }
+
+  .products {
+
+    gap: 20px;
+  }
+
+  .card {
+
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .nav-buttons a {
+
+    width: 90%;
+
+    max-width: 320px;
   }
 
 }
