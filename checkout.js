@@ -1,14 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // =========================
-  // CART DATA
-  // =========================
   let cart =
     JSON.parse(localStorage.getItem("cart")) || [];
 
-  // =========================
-  // ELEMENTS
-  // =========================
   const orderItems =
     document.getElementById("orderItems");
 
@@ -21,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const popup =
     document.getElementById("confirmation");
 
-  // FORM INPUTS
   const nameInput =
     document.getElementById("name");
 
@@ -31,21 +24,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const addressInput =
     document.getElementById("address");
 
-  // =========================
-  // SAFETY CHECK
-  // =========================
-  if (
-    !orderItems ||
-    !orderTotal ||
-    !placeOrderBtn
-  ) {
+  const deliveryInfo =
+    document.getElementById("deliveryInfo");
+
+  const deliveryRadios =
+    document.querySelectorAll('input[name="deliveryType"]');
+
+  if (!orderItems || !orderTotal || !placeOrderBtn) {
     console.error("Checkout elements missing");
     return;
   }
 
-  // =========================
-  // LOAD ORDER
-  // =========================
+  // SHOW / HIDE ADDRESS FIELD
+  deliveryRadios.forEach(radio => {
+
+    radio.addEventListener("change", () => {
+
+      if (radio.value === "delivery" && radio.checked) {
+        deliveryInfo.classList.remove("hidden");
+      } else {
+        deliveryInfo.classList.add("hidden");
+      }
+
+      loadOrder();
+    });
+
+  });
+
   function loadOrder() {
 
     orderItems.innerHTML = "";
@@ -54,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cart.forEach(item => {
 
-      // BUNDLE DEAL
       const singlePrice =
         item.basePrice + item.toppingCost;
 
@@ -76,72 +80,29 @@ document.addEventListener("DOMContentLoaded", () => {
       div.classList.add("order-item");
 
       div.innerHTML = `
-        <p>
-          <strong>${item.name}</strong>
-        </p>
-
-        <p>
-          Quantity: ${item.quantity}
-        </p>
-
-        <p>
-          Toppings:
-          ${item.toppings.join(", ") || "None"}
-        </p>
-
-        <p>
-          Price: $${itemTotal}
-        </p>
+        <p><strong>${item.name}</strong></p>
+        <p>Quantity: ${item.quantity}</p>
+        <p>Toppings: ${item.toppings.join(", ") || "None"}</p>
+        <p>Price: $${itemTotal}</p>
       `;
 
       orderItems.appendChild(div);
 
     });
 
-    // DELIVERY FEE
-    const deliverySelected =
-      document.querySelector(
-        'input[name="delivery"]:checked'
-      );
+    const deliveryType =
+      document.querySelector('input[name="deliveryType"]:checked').value;
 
-    let deliveryFee = 0;
-
-    if (
-      deliverySelected &&
-      deliverySelected.value === "delivery"
-    ) {
-      deliveryFee = 5;
+    if (deliveryType === "delivery") {
+      total += 5;
     }
-
-    total += deliveryFee;
 
     orderTotal.textContent =
       "Total: $" + total;
-
   }
 
-  // =========================
-  // DELIVERY OPTION UPDATE
-  // =========================
-  const deliveryOptions =
-    document.querySelectorAll(
-      'input[name="delivery"]'
-    );
-
-  deliveryOptions.forEach(option => {
-
-    option.addEventListener("change", () => {
-      loadOrder();
-    });
-
-  });
-
-  // =========================
-  // PLACE ORDER BUTTON
-  // =========================
   placeOrderBtn.addEventListener("click", () => {
 
-    // GET VALUES
     const name =
       nameInput.value.trim();
 
@@ -149,68 +110,54 @@ document.addEventListener("DOMContentLoaded", () => {
       emailInput.value.trim();
 
     const address =
-      addressInput.value.trim();
+      addressInput ? addressInput.value.trim() : "";
 
-    // VALIDATION
-    if (!name || !email || !address) {
+    const deliveryType =
+      document.querySelector('input[name="deliveryType"]:checked').value;
 
-      alert("Please fill out all fields.");
-
+    if (!name || !email) {
+      alert("Please fill out name and email.");
       return;
     }
 
-    // EMAIL CHECK
     if (!email.includes("@")) {
-
       alert("Please enter a valid email.");
-
       return;
     }
 
-    // EMPTY CART
+    if (deliveryType === "delivery" && !address) {
+      alert("Please enter delivery address.");
+      return;
+    }
+
     if (cart.length === 0) {
-
       alert("Your cart is empty.");
-
       return;
     }
 
-    // BUTTON ANIMATION
-    placeOrderBtn.innerHTML =
-      "Processing Payment...";
-
+    placeOrderBtn.innerHTML = "Processing Payment...";
     placeOrderBtn.disabled = true;
 
-    // FAKE STRIPE DELAY
     setTimeout(() => {
 
-      // SHOW SUCCESS POPUP
       popup.classList.remove("hidden");
 
-      // CLEAR CART
       localStorage.removeItem("cart");
 
-      // RESET BUTTON
-      placeOrderBtn.innerHTML =
-        "Payment Successful ✓";
+      placeOrderBtn.innerHTML = "Payment Successful ✓";
+
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 1500);
 
     }, 2000);
 
   });
 
-  // =========================
-  // GO HOME BUTTON
-  // =========================
   window.goHome = function () {
-
-    window.location.href =
-      "index.html";
-
+    window.location.href = "index.html";
   };
 
-  // =========================
-  // INITIAL LOAD
-  // =========================
   loadOrder();
 
 });
